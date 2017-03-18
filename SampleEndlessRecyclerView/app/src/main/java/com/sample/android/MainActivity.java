@@ -3,6 +3,7 @@ package com.sample.android;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.sample.android.databinding.ActivityMainBinding;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         activityMainBinding.recyclerView.setLayoutManager(linearLayoutManager);
-
+        activityMainBinding.recyclerView.addItemDecoration(new DividerItemDecoration(MainActivity.this, DividerItemDecoration.VERTICAL));
         mStringList = new ArrayList<>();
         addDataToList();
         SampleAdapter sampleAdapter = new SampleAdapter(mStringList);
