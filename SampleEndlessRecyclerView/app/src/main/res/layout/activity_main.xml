@@ -11,6 +11,17 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/item_progress_bar"
             android:layout_marginTop="8dp" />
+
+        <ProgressBar
+            android:id="@+id/item_progress_bar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:elevation="@dimen/padding_5"
+            android:padding="@dimen/padding_5"
+            android:visibility="gone" />
     </RelativeLayout>
 </layout>
