@@ -1,3 +1,3 @@
 # SampleEndlessRecyclerView
 
-RecyclerView with endless scoll listener
+RecyclerView with endless scroll listener
