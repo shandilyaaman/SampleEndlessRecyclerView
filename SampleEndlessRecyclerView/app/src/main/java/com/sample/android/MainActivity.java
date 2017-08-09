@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mActivityMainBinding.recyclerView.setAdapter(mSampleAdapter);
         addDataToList();
 
-        mActivityMainBinding.recyclerView.addOnScrollListener(new EndlessRecyclerOnScrollListener(linearLayoutManager) {
+        mActivityMainBinding.recyclerView.addOnScrollListener(new EndlessRecyclerOnScrollListener() {
             @Override
             public void onLoadMore() {
                 addDataToList();

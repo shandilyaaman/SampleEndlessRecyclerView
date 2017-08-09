@@ -9,25 +9,19 @@ public abstract class EndlessRecyclerOnScrollListener extends RecyclerView.OnScr
     /**
      * The total number of items in the dataset after the last load
      */
-    public int mPreviousTotal = 0;
+    private int mPreviousTotal = 0;
     /**
      * True if we are still waiting for the last set of data to load.
      */
     private boolean mLoading = true;
-
-    private LinearLayoutManager mLinearLayoutManager;
-
-    protected EndlessRecyclerOnScrollListener(LinearLayoutManager linearLayoutManager) {
-        this.mLinearLayoutManager = linearLayoutManager;
-    }
 
     @Override
     public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
 
         int visibleItemCount = recyclerView.getChildCount();
-        int totalItemCount = mLinearLayoutManager.getItemCount();
-        int firstVisibleItem = mLinearLayoutManager.findFirstVisibleItemPosition();
+        int totalItemCount = recyclerView.getLayoutManager().getItemCount();
+        int firstVisibleItem = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstVisibleItemPosition();
 
         if (mLoading) {
             if (totalItemCount > mPreviousTotal) {
